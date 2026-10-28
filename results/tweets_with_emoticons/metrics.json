@@ -1,0 +1,440 @@
+{
+  "name": "tweets_with_emoticons",
+  "dataset": "tweets",
+  "config": "TF-IDF + Logistic Regression (uni+bigrams), C=4",
+  "remove_emoticons": false,
+  "n_train": 7178,
+  "n_test": 1795,
+  "labels": [
+    "negative",
+    "positive"
+  ],
+  "test_accuracy": 0.9933147632311977,
+  "test_f1": 0.99331160588529,
+  "baseline_accuracy": 0.5136490250696378,
+  "emoticons_are_signal": false,
+  "cv_f1": 0.9970725980151427,
+  "cv_folds": 5,
+  "seed": 42,
+  "data_cleaning": {
+    "loaded": 10000,
+    "empty_after_cleaning": 0,
+    "conflicting_labels": 0,
+    "near_duplicates": 1027,
+    "kept": 8973
+  },
+  "calibrated": true,
+  "calibration_check": {
+    "cv_log_loss_raw": 0.03532321748765426,
+    "cv_log_loss_calibrated": 0.013285314668690401
+  },
+  "fit_seconds": 0.498,
+  "metrics": {
+    "accuracy": 0.9933147632311977,
+    "balanced_accuracy": 0.9934619694722117,
+    "baseline_accuracy": 0.5136490250696378,
+    "precision_macro": 0.9932229888140509,
+    "recall_macro": 0.9934619694722117,
+    "f1_macro": 0.99331160588529,
+    "log_loss": 0.021662103419423748,
+    "calibration_error": 0.002866797817805911,
+    "labels": [
+      "negative",
+      "positive"
+    ],
+    "confusion_matrix": [
+      [
+        911,
+        11
+      ],
+      [
+        1,
+        872
+      ]
+    ]
+  },
+  "per_class": {
+    "negative": {
+      "precision": 0.9989035087719298,
+      "recall": 0.9880694143167028,
+      "f1-score": 0.9934569247546347,
+      "support": 922.0
+    },
+    "positive": {
+      "precision": 0.9875424688561721,
+      "recall": 0.9988545246277205,
+      "f1-score": 0.9931662870159453,
+      "support": 873.0
+    },
+    "accuracy": 0.9933147632311977,
+    "macro avg": {
+      "precision": 0.9932229888140509,
+      "recall": 0.9934619694722117,
+      "f1-score": 0.99331160588529,
+      "support": 1795.0
+    },
+    "weighted avg": {
+      "precision": 0.9933780559326782,
+      "recall": 0.9933147632311977,
+      "f1-score": 0.9933155728070715,
+      "support": 1795.0
+    }
+  },
+  "uncalibrated": {
+    "accuracy": 0.9933147632311977,
+    "f1_macro": 0.99331160588529,
+    "log_loss": 0.0387090820825832,
+    "calibration_error": 0.025710913599196736
+  },
+  "per_source": {},
+  "benchmark": null,
+  "comparison": [
+    {
+      "model": "CountVectorizer + Naive Bayes (unigrams)",
+      "vectorizer": "count",
+      "classifier": "nb",
+      "ngram": [
+        1,
+        1
+      ],
+      "strength": 1.0,
+      "keep_stopwords": false,
+      "balanced": false,
+      "stage": "Stage 1",
+      "cv_f1_mean": 0.9948,
+      "cv_f1_std": 0.0025,
+      "test_accuracy": 0.9928,
+      "test_f1": 0.9928
+    },
+    {
+      "model": "CountVectorizer + Naive Bayes (uni+bigrams)",
+      "vectorizer": "count",
+      "classifier": "nb",
+      "ngram": [
+        1,
+        2
+      ],
+      "strength": 1.0,
+      "keep_stopwords": false,
+      "balanced": false,
+      "stage": "Stage 1",
+      "cv_f1_mean": 0.9923,
+      "cv_f1_std": 0.0032,
+      "test_accuracy": 0.9889,
+      "test_f1": 0.9889
+    },
+    {
+      "model": "CountVectorizer + Logistic Regression (unigrams)",
+      "vectorizer": "count",
+      "classifier": "lr",
+      "ngram": [
+        1,
+        1
+      ],
+      "strength": 1.0,
+      "keep_stopwords": false,
+      "balanced": false,
+      "stage": "Stage 1",
+      "cv_f1_mean": 0.9954,
+      "cv_f1_std": 0.0012,
+      "test_accuracy": 0.9905,
+      "test_f1": 0.9905
+    },
+    {
+      "model": "CountVectorizer + Logistic Regression (uni+bigrams)",
+      "vectorizer": "count",
+      "classifier": "lr",
+      "ngram": [
+        1,
+        2
+      ],
+      "strength": 1.0,
+      "keep_stopwords": false,
+      "balanced": false,
+      "stage": "Stage 1",
+      "cv_f1_mean": 0.9955,
+      "cv_f1_std": 0.0013,
+      "test_accuracy": 0.9911,
+      "test_f1": 0.9911
+    },
+    {
+      "model": "TF-IDF + Naive Bayes (unigrams)",
+      "vectorizer": "tfidf",
+      "classifier": "nb",
+      "ngram": [
+        1,
+        1
+      ],
+      "strength": 1.0,
+      "keep_stopwords": false,
+      "balanced": false,
+      "stage": "Stage 1",
+      "cv_f1_mean": 0.9492,
+      "cv_f1_std": 0.0051,
+      "test_accuracy": 0.951,
+      "test_f1": 0.9509
+    },
+    {
+      "model": "TF-IDF + Naive Bayes (uni+bigrams)",
+      "vectorizer": "tfidf",
+      "classifier": "nb",
+      "ngram": [
+        1,
+        2
+      ],
+      "strength": 1.0,
+      "keep_stopwords": false,
+      "balanced": false,
+      "stage": "Stage 1",
+      "cv_f1_mean": 0.9569,
+      "cv_f1_std": 0.0042,
+      "test_accuracy": 0.9621,
+      "test_f1": 0.9621
+    },
+    {
+      "model": "TF-IDF + Logistic Regression (unigrams)",
+      "vectorizer": "tfidf",
+      "classifier": "lr",
+      "ngram": [
+        1,
+        1
+      ],
+      "strength": 1.0,
+      "keep_stopwords": false,
+      "balanced": false,
+      "stage": "Stage 1",
+      "cv_f1_mean": 0.9969,
+      "cv_f1_std": 0.001,
+      "test_accuracy": 0.9933,
+      "test_f1": 0.9933
+    },
+    {
+      "model": "TF-IDF + Logistic Regression (uni+bigrams)",
+      "vectorizer": "tfidf",
+      "classifier": "lr",
+      "ngram": [
+        1,
+        2
+      ],
+      "strength": 1.0,
+      "keep_stopwords": false,
+      "balanced": false,
+      "stage": "Stage 1",
+      "cv_f1_mean": 0.9969,
+      "cv_f1_std": 0.0014,
+      "test_accuracy": 0.9933,
+      "test_f1": 0.9933
+    },
+    {
+      "model": "TF-IDF + Logistic Regression (uni+bigrams), stopwords kept",
+      "vectorizer": "tfidf",
+      "classifier": "lr",
+      "ngram": [
+        1,
+        2
+      ],
+      "strength": 1.0,
+      "keep_stopwords": true,
+      "balanced": false,
+      "stage": "Stage 2",
+      "cv_f1_mean": 0.9969,
+      "cv_f1_std": 0.0016,
+      "test_accuracy": 0.995,
+      "test_f1": 0.995
+    },
+    {
+      "model": "TF-IDF + Logistic Regression (uni+bigrams), C=4",
+      "vectorizer": "tfidf",
+      "classifier": "lr",
+      "ngram": [
+        1,
+        2
+      ],
+      "strength": 4.0,
+      "keep_stopwords": false,
+      "balanced": false,
+      "stage": "Stage 2",
+      "cv_f1_mean": 0.9971,
+      "cv_f1_std": 0.0012,
+      "test_accuracy": 0.9933,
+      "test_f1": 0.9933
+    },
+    {
+      "model": "TF-IDF + Logistic Regression (uni+bigrams), C=4, stopwords kept",
+      "vectorizer": "tfidf",
+      "classifier": "lr",
+      "ngram": [
+        1,
+        2
+      ],
+      "strength": 4.0,
+      "keep_stopwords": true,
+      "balanced": false,
+      "stage": "Stage 2",
+      "cv_f1_mean": 0.9967,
+      "cv_f1_std": 0.0018,
+      "test_accuracy": 0.9939,
+      "test_f1": 0.9939
+    },
+    {
+      "model": "TF-IDF + Logistic Regression (uni+bigrams), C=10",
+      "vectorizer": "tfidf",
+      "classifier": "lr",
+      "ngram": [
+        1,
+        2
+      ],
+      "strength": 10.0,
+      "keep_stopwords": false,
+      "balanced": false,
+      "stage": "Stage 2",
+      "cv_f1_mean": 0.9971,
+      "cv_f1_std": 0.0012,
+      "test_accuracy": 0.9933,
+      "test_f1": 0.9933
+    },
+    {
+      "model": "TF-IDF + Logistic Regression (uni+bigrams), C=10, stopwords kept",
+      "vectorizer": "tfidf",
+      "classifier": "lr",
+      "ngram": [
+        1,
+        2
+      ],
+      "strength": 10.0,
+      "keep_stopwords": true,
+      "balanced": false,
+      "stage": "Stage 2",
+      "cv_f1_mean": 0.9968,
+      "cv_f1_std": 0.0015,
+      "test_accuracy": 0.9939,
+      "test_f1": 0.9939
+    }
+  ],
+  "top_features": {
+    "positive": [
+      [
+        "emo_smile",
+        28.202
+      ],
+      [
+        "emo_grin",
+        12.3628
+      ],
+      [
+        "emo_tongue",
+        7.0147
+      ],
+      [
+        "thanks",
+        2.1941
+      ],
+      [
+        "thank",
+        1.8991
+      ],
+      [
+        "happy",
+        1.737
+      ],
+      [
+        "great",
+        1.5387
+      ],
+      [
+        "nice",
+        1.4378
+      ],
+      [
+        "good",
+        1.2932
+      ],
+      [
+        "hi",
+        1.2779
+      ],
+      [
+        "not_wait",
+        1.161
+      ],
+      [
+        "funny",
+        1.1078
+      ],
+      [
+        "morning",
+        1.064
+      ],
+      [
+        "not not_wait",
+        1.0556
+      ],
+      [
+        "yes",
+        1.038
+      ]
+    ],
+    "negative": [
+      [
+        "emo_frown",
+        33.2311
+      ],
+      [
+        "not",
+        2.176
+      ],
+      [
+        "sorry",
+        1.9905
+      ],
+      [
+        "nigga",
+        1.839
+      ],
+      [
+        "miss",
+        1.7967
+      ],
+      [
+        "time",
+        1.6146
+      ],
+      [
+        "lil",
+        1.6128
+      ],
+      [
+        "not emo_frown",
+        1.425
+      ],
+      [
+        "sad",
+        1.3997
+      ],
+      [
+        "anytime",
+        1.3477
+      ],
+      [
+        "emo_smile emo_frown",
+        1.3128
+      ],
+      [
+        "i'm",
+        1.2649
+      ],
+      [
+        "no",
+        1.2622
+      ],
+      [
+        "missed",
+        1.1598
+      ],
+      [
+        "hard",
+        1.1453
+      ]
+    ]
+  }
+}

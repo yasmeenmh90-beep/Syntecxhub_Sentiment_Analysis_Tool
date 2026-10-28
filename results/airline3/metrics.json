@@ -1,0 +1,432 @@
+{
+  "name": "airline3",
+  "dataset": "airline3",
+  "config": "CountVectorizer + Logistic Regression (uni+bigrams), stopwords kept",
+  "remove_emoticons": false,
+  "n_train": 11220,
+  "n_test": 2805,
+  "labels": [
+    "negative",
+    "neutral",
+    "positive"
+  ],
+  "test_accuracy": 0.8035650623885918,
+  "test_f1": 0.726325325143292,
+  "baseline_accuracy": 0.6438502673796791,
+  "emoticons_are_signal": true,
+  "cv_f1": 0.7397963624074415,
+  "cv_folds": 5,
+  "seed": 42,
+  "data_cleaning": {
+    "loaded": 14427,
+    "empty_after_cleaning": 38,
+    "conflicting_labels": 210,
+    "near_duplicates": 154,
+    "kept": 14025
+  },
+  "calibrated": true,
+  "calibration_check": {
+    "cv_log_loss_raw": 0.5276301553139031,
+    "cv_log_loss_calibrated": 0.5111572853811547
+  },
+  "fit_seconds": 5.099,
+  "metrics": {
+    "accuracy": 0.8035650623885918,
+    "balanced_accuracy": 0.7079406653458061,
+    "baseline_accuracy": 0.6438502673796791,
+    "precision_macro": 0.7509682699100971,
+    "recall_macro": 0.7079406653458061,
+    "f1_macro": 0.726325325143292,
+    "log_loss": 0.509417881078074,
+    "calibration_error": 0.04748737532300394,
+    "labels": [
+      "negative",
+      "neutral",
+      "positive"
+    ],
+    "confusion_matrix": [
+      [
+        1661,
+        96,
+        49
+      ],
+      [
+        213,
+        309,
+        48
+      ],
+      [
+        80,
+        65,
+        284
+      ]
+    ]
+  },
+  "per_class": {
+    "negative": {
+      "precision": 0.8500511770726714,
+      "recall": 0.9197120708748616,
+      "f1-score": 0.8835106382978724,
+      "support": 1806.0
+    },
+    "neutral": {
+      "precision": 0.6574468085106383,
+      "recall": 0.5421052631578948,
+      "f1-score": 0.5942307692307692,
+      "support": 570.0
+    },
+    "positive": {
+      "precision": 0.7454068241469817,
+      "recall": 0.662004662004662,
+      "f1-score": 0.7012345679012346,
+      "support": 429.0
+    },
+    "accuracy": 0.8035650623885918,
+    "macro avg": {
+      "precision": 0.7509682699100971,
+      "recall": 0.7079406653458061,
+      "f1-score": 0.726325325143292,
+      "support": 2805.0
+    },
+    "weighted avg": {
+      "precision": 0.7949078909815912,
+      "recall": 0.8035650623885918,
+      "f1-score": 0.7968489771326651,
+      "support": 2805.0
+    }
+  },
+  "uncalibrated": {
+    "accuracy": 0.8010695187165775,
+    "f1_macro": 0.7292504511449979,
+    "log_loss": 0.5238189139160501,
+    "calibration_error": 0.0516664031127515
+  },
+  "per_source": {},
+  "benchmark": null,
+  "comparison": [
+    {
+      "model": "CountVectorizer + Naive Bayes (unigrams)",
+      "vectorizer": "count",
+      "classifier": "nb",
+      "ngram": [
+        1,
+        1
+      ],
+      "strength": 1.0,
+      "keep_stopwords": false,
+      "balanced": false,
+      "stage": "Stage 1",
+      "cv_f1_mean": 0.6926,
+      "cv_f1_std": 0.0039,
+      "test_accuracy": 0.7747,
+      "test_f1": 0.6864
+    },
+    {
+      "model": "CountVectorizer + Naive Bayes (uni+bigrams)",
+      "vectorizer": "count",
+      "classifier": "nb",
+      "ngram": [
+        1,
+        2
+      ],
+      "strength": 1.0,
+      "keep_stopwords": false,
+      "balanced": false,
+      "stage": "Stage 1",
+      "cv_f1_mean": 0.6851,
+      "cv_f1_std": 0.0072,
+      "test_accuracy": 0.7797,
+      "test_f1": 0.6904
+    },
+    {
+      "model": "CountVectorizer + Logistic Regression (unigrams)",
+      "vectorizer": "count",
+      "classifier": "lr",
+      "ngram": [
+        1,
+        1
+      ],
+      "strength": 1.0,
+      "keep_stopwords": false,
+      "balanced": false,
+      "stage": "Stage 1",
+      "cv_f1_mean": 0.7128,
+      "cv_f1_std": 0.0095,
+      "test_accuracy": 0.785,
+      "test_f1": 0.7083
+    },
+    {
+      "model": "CountVectorizer + Logistic Regression (uni+bigrams)",
+      "vectorizer": "count",
+      "classifier": "lr",
+      "ngram": [
+        1,
+        2
+      ],
+      "strength": 1.0,
+      "keep_stopwords": false,
+      "balanced": false,
+      "stage": "Stage 1",
+      "cv_f1_mean": 0.7159,
+      "cv_f1_std": 0.0083,
+      "test_accuracy": 0.7865,
+      "test_f1": 0.7107
+    },
+    {
+      "model": "TF-IDF + Naive Bayes (unigrams)",
+      "vectorizer": "tfidf",
+      "classifier": "nb",
+      "ngram": [
+        1,
+        1
+      ],
+      "strength": 1.0,
+      "keep_stopwords": false,
+      "balanced": false,
+      "stage": "Stage 1",
+      "cv_f1_mean": 0.5363,
+      "cv_f1_std": 0.0024,
+      "test_accuracy": 0.728,
+      "test_f1": 0.5362
+    },
+    {
+      "model": "TF-IDF + Naive Bayes (uni+bigrams)",
+      "vectorizer": "tfidf",
+      "classifier": "nb",
+      "ngram": [
+        1,
+        2
+      ],
+      "strength": 1.0,
+      "keep_stopwords": false,
+      "balanced": false,
+      "stage": "Stage 1",
+      "cv_f1_mean": 0.5008,
+      "cv_f1_std": 0.0085,
+      "test_accuracy": 0.7148,
+      "test_f1": 0.5007
+    },
+    {
+      "model": "TF-IDF + Logistic Regression (unigrams)",
+      "vectorizer": "tfidf",
+      "classifier": "lr",
+      "ngram": [
+        1,
+        1
+      ],
+      "strength": 1.0,
+      "keep_stopwords": false,
+      "balanced": false,
+      "stage": "Stage 1",
+      "cv_f1_mean": 0.6911,
+      "cv_f1_std": 0.0082,
+      "test_accuracy": 0.7925,
+      "test_f1": 0.6976
+    },
+    {
+      "model": "TF-IDF + Logistic Regression (uni+bigrams)",
+      "vectorizer": "tfidf",
+      "classifier": "lr",
+      "ngram": [
+        1,
+        2
+      ],
+      "strength": 1.0,
+      "keep_stopwords": false,
+      "balanced": false,
+      "stage": "Stage 1",
+      "cv_f1_mean": 0.6849,
+      "cv_f1_std": 0.0083,
+      "test_accuracy": 0.7907,
+      "test_f1": 0.6948
+    },
+    {
+      "model": "CountVectorizer + Logistic Regression (uni+bigrams), balanced classes",
+      "vectorizer": "count",
+      "classifier": "lr",
+      "ngram": [
+        1,
+        2
+      ],
+      "strength": 1.0,
+      "keep_stopwords": false,
+      "balanced": true,
+      "stage": "Stage 2",
+      "cv_f1_mean": 0.7118,
+      "cv_f1_std": 0.0066,
+      "test_accuracy": 0.7672,
+      "test_f1": 0.7114
+    },
+    {
+      "model": "CountVectorizer + Logistic Regression (uni+bigrams), stopwords kept",
+      "vectorizer": "count",
+      "classifier": "lr",
+      "ngram": [
+        1,
+        2
+      ],
+      "strength": 1.0,
+      "keep_stopwords": true,
+      "balanced": false,
+      "stage": "Stage 2",
+      "cv_f1_mean": 0.7398,
+      "cv_f1_std": 0.0087,
+      "test_accuracy": 0.8011,
+      "test_f1": 0.7293
+    },
+    {
+      "model": "CountVectorizer + Logistic Regression (uni+bigrams), stopwords kept, balanced classes",
+      "vectorizer": "count",
+      "classifier": "lr",
+      "ngram": [
+        1,
+        2
+      ],
+      "strength": 1.0,
+      "keep_stopwords": true,
+      "balanced": true,
+      "stage": "Stage 2",
+      "cv_f1_mean": 0.7391,
+      "cv_f1_std": 0.0102,
+      "test_accuracy": 0.7847,
+      "test_f1": 0.7224
+    },
+    {
+      "model": "CountVectorizer + Logistic Regression (uni+bigrams), C=4",
+      "vectorizer": "count",
+      "classifier": "lr",
+      "ngram": [
+        1,
+        2
+      ],
+      "strength": 4.0,
+      "keep_stopwords": false,
+      "balanced": false,
+      "stage": "Stage 2",
+      "cv_f1_mean": 0.7073,
+      "cv_f1_std": 0.0092,
+      "test_accuracy": 0.7733,
+      "test_f1": 0.6953
+    },
+    {
+      "model": "CountVectorizer + Logistic Regression (uni+bigrams), C=4, balanced classes",
+      "vectorizer": "count",
+      "classifier": "lr",
+      "ngram": [
+        1,
+        2
+      ],
+      "strength": 4.0,
+      "keep_stopwords": false,
+      "balanced": true,
+      "stage": "Stage 2",
+      "cv_f1_mean": 0.7047,
+      "cv_f1_std": 0.0043,
+      "test_accuracy": 0.7569,
+      "test_f1": 0.6928
+    },
+    {
+      "model": "CountVectorizer + Logistic Regression (uni+bigrams), C=4, stopwords kept",
+      "vectorizer": "count",
+      "classifier": "lr",
+      "ngram": [
+        1,
+        2
+      ],
+      "strength": 4.0,
+      "keep_stopwords": true,
+      "balanced": false,
+      "stage": "Stage 2",
+      "cv_f1_mean": 0.735,
+      "cv_f1_std": 0.0102,
+      "test_accuracy": 0.7939,
+      "test_f1": 0.7226
+    },
+    {
+      "model": "CountVectorizer + Logistic Regression (uni+bigrams), C=4, stopwords kept, balanced classes",
+      "vectorizer": "count",
+      "classifier": "lr",
+      "ngram": [
+        1,
+        2
+      ],
+      "strength": 4.0,
+      "keep_stopwords": true,
+      "balanced": true,
+      "stage": "Stage 2",
+      "cv_f1_mean": 0.7339,
+      "cv_f1_std": 0.0123,
+      "test_accuracy": 0.7854,
+      "test_f1": 0.7211
+    },
+    {
+      "model": "CountVectorizer + Logistic Regression (uni+bigrams), C=10",
+      "vectorizer": "count",
+      "classifier": "lr",
+      "ngram": [
+        1,
+        2
+      ],
+      "strength": 10.0,
+      "keep_stopwords": false,
+      "balanced": false,
+      "stage": "Stage 2",
+      "cv_f1_mean": 0.6981,
+      "cv_f1_std": 0.0051,
+      "test_accuracy": 0.769,
+      "test_f1": 0.6912
+    },
+    {
+      "model": "CountVectorizer + Logistic Regression (uni+bigrams), C=10, balanced classes",
+      "vectorizer": "count",
+      "classifier": "lr",
+      "ngram": [
+        1,
+        2
+      ],
+      "strength": 10.0,
+      "keep_stopwords": false,
+      "balanced": true,
+      "stage": "Stage 2",
+      "cv_f1_mean": 0.6987,
+      "cv_f1_std": 0.0044,
+      "test_accuracy": 0.7522,
+      "test_f1": 0.6846
+    },
+    {
+      "model": "CountVectorizer + Logistic Regression (uni+bigrams), C=10, stopwords kept",
+      "vectorizer": "count",
+      "classifier": "lr",
+      "ngram": [
+        1,
+        2
+      ],
+      "strength": 10.0,
+      "keep_stopwords": true,
+      "balanced": false,
+      "stage": "Stage 2",
+      "cv_f1_mean": 0.7313,
+      "cv_f1_std": 0.0122,
+      "test_accuracy": 0.7922,
+      "test_f1": 0.7209
+    },
+    {
+      "model": "CountVectorizer + Logistic Regression (uni+bigrams), C=10, stopwords kept, balanced classes",
+      "vectorizer": "count",
+      "classifier": "lr",
+      "ngram": [
+        1,
+        2
+      ],
+      "strength": 10.0,
+      "keep_stopwords": true,
+      "balanced": true,
+      "stage": "Stage 2",
+      "cv_f1_mean": 0.7272,
+      "cv_f1_std": 0.0119,
+      "test_accuracy": 0.7857,
+      "test_f1": 0.7207
+    }
+  ],
+  "top_features": {}
+}
